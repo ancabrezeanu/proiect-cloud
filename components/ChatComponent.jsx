@@ -29,19 +29,19 @@ export default function ChatComponent() {
 		  });
 	  
 		  const data = await res.json();
-		  console.log("Răspuns API complet:", data); // Verifică structura răspunsului
+		  console.log("Răspuns API complet:", data); 
 	  
 		  let messageContent = null;
 		  if (data && data.message) {
-			messageContent = data.message.content; // Dacă răspunsul e { message: ... }
+			messageContent = data.message.content; 
 		  } else if (data.data && data.data.message) {
-			messageContent = data.data.message.content; // Dacă răspunsul e { data: { message: ... } }
+			messageContent = data.data.message.content; 
 		  }
 	  
 		  if (messageContent) {
 			setChatMessages((prev) => {
 			  const updated = [...prev, { role: "assistant", content: messageContent }];
-			  console.log("Mesaje actualizate:", updated); // Verifică starea
+			  console.log("Mesaje actualizate:", updated); 
 			  return updated;
 			});
 		  } else {
