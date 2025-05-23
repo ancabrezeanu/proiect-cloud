@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import ChatComponent from "@/components/ChatComponent";
+import ChatComponent from "@/components/ChatComponent"; 
 
 export default function Home() {
   const [goals, setGoals] = useState([]);
