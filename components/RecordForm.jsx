@@ -14,15 +14,15 @@ const RecordForm = ({ data, onSubmit }) => {
   };
 
   return (
-    <div className="w-full px-4 mt-20 mb-10">
-      <div className="max-w-4xl mx-auto bg-white bg-opacity-90 rounded-3xl shadow-2xl p-10 space-y-8 border-4 border-purple-500">
-        <h2 className="text-4xl font-bold text-center text-purple-700 tracking-wide">
+    <div className="w-full flex justify-center px-4 mt-20 mb-10">
+      <div className="w-full max-w-md space-y-8">
+        <h2 className="text-3xl font-bold text-center text-purple-800">
           Adaugă un Obiectiv
         </h2>
 
-        <div className="space-y-6">
-          <div>
-            <label htmlFor="title" className="block mb-2 text-lg font-semibold text-purple-800">
+        <div className="space-y-6 flex flex-col items-center">
+          <div className="w-3/5">
+            <label htmlFor="title" className="block mb-2 text-lg font-bold text-purple-800">
               Titlu obiectiv
             </label>
             <input
@@ -30,14 +30,14 @@ const RecordForm = ({ data, onSubmit }) => {
               id="title"
               value={entry.title}
               onChange={(e) => updateEntry("title", e.target.value)}
-              className="w-full p-5 text-lg border-2 border-purple-400 rounded-xl bg-purple-50 focus:outline-none focus:ring-4 focus:ring-purple-300"
+              className="w-full py-4 px-4 text-lg font-bold border-2 border-purple-500 rounded-md bg-white focus:outline-none focus:ring-4 focus:ring-purple-400"
               placeholder="Ex: Bea 2 litri de apă"
               required
             />
           </div>
 
-          <div>
-            <label htmlFor="date" className="block mb-2 text-lg font-semibold text-purple-800">
+          <div className="w-3/5">
+            <label htmlFor="date" className="block mb-2 text-lg font-bold text-purple-800">
               Data
             </label>
             <input
@@ -45,37 +45,37 @@ const RecordForm = ({ data, onSubmit }) => {
               id="date"
               value={entry.date}
               onChange={(e) => updateEntry("date", e.target.value)}
-              className="w-full p-5 text-lg border-2 border-purple-400 rounded-xl bg-purple-50 focus:outline-none focus:ring-4 focus:ring-purple-300"
+              className="w-full py-4 px-4 text-lg font-bold border-2 border-purple-500 rounded-md bg-white focus:outline-none focus:ring-4 focus:ring-purple-400"
               required
             />
           </div>
 
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-3 w-3/5">
             <input
               id="completed"
               type="checkbox"
               checked={entry.completed}
               onChange={(e) => updateEntry("completed", e.target.checked)}
-              className="w-5 h-5 text-purple-600 border-2 border-purple-400 rounded focus:ring-2 focus:ring-purple-500"
+              className="w-6 h-6 text-purple-600 border-2 border-gray-300 rounded"
             />
-            <label htmlFor="completed" className="text-lg font-semibold text-purple-800">
+            <label htmlFor="completed" className="text-lg font-bold text-purple-800">
               Marcat ca finalizat
             </label>
           </div>
         </div>
 
-        <div className="flex justify-center gap-6 mt-8">
+        <div className="flex justify-center gap-6 mt-6">
           <button
             type="button"
             onClick={handleCancel}
-            className="px-8 py-3 bg-red-500 text-white text-lg rounded-xl hover:bg-red-600 transition duration-300 font-bold shadow-lg"
+            className="px-6 py-3 bg-red-500 text-white text-lg font-bold rounded-md hover:bg-red-600 transition"
           >
             Renunță
           </button>
           <button
             type="button"
             onClick={() => onSubmit(entry)}
-            className="px-8 py-3 bg-green-500 text-white text-lg rounded-xl hover:bg-green-600 transition duration-300 font-bold shadow-lg"
+            className="px-6 py-3 bg-green-500 text-white text-lg font-bold rounded-md hover:bg-green-600 transition"
           >
             {entry._id ? "Actualizează" : "Adaugă"}
           </button>
