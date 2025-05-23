@@ -105,7 +105,7 @@ export default async function handler(req, res) {
       });
     }
 
-    return sendOk(res, result);
+    return sendOk(res, { message: result.message });
   } catch (error) {
     console.error("Eroare în handler /api/answer:", error);
     return sendBadRequest(res, ERRORS.OPEN_AI_ERROR.type, ERRORS.OPEN_AI_ERROR.message);
