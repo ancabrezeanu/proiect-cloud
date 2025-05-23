@@ -1,5 +1,3 @@
-// /components/RecordForm.jsx
-
 import React, { useState } from "react";
 import { useRouter } from "next/router";
 
@@ -16,68 +14,68 @@ const RecordForm = ({ data, onSubmit }) => {
   };
 
   return (
-    <div className="flex justify-center p-4">
-      <div className="border p-4 rounded-md shadow-sm flex flex-col gap-4 w-full max-w-96 bg-white dark:bg-gray-800">
-        <div>
-          <label
-            htmlFor="title"
-            className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
-          >
-            Titlu obiectiv
-          </label>
-          <input
-            type="text"
-            id="title"
-            value={entry.title}
-            onChange={(e) => updateEntry("title", e.target.value)}
-            className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white"
-            placeholder="Ex: Bea 2 litri de apă"
-            required
-          />
+    <div className="w-full px-4 mt-20 mb-10">
+      <div className="max-w-4xl mx-auto bg-white bg-opacity-90 rounded-3xl shadow-2xl p-10 space-y-8 border-4 border-purple-500">
+        <h2 className="text-4xl font-bold text-center text-purple-700 tracking-wide">
+          Adaugă un Obiectiv
+        </h2>
+
+        <div className="space-y-6">
+          <div>
+            <label htmlFor="title" className="block mb-2 text-lg font-semibold text-purple-800">
+              Titlu obiectiv
+            </label>
+            <input
+              type="text"
+              id="title"
+              value={entry.title}
+              onChange={(e) => updateEntry("title", e.target.value)}
+              className="w-full p-5 text-lg border-2 border-purple-400 rounded-xl bg-purple-50 focus:outline-none focus:ring-4 focus:ring-purple-300"
+              placeholder="Ex: Bea 2 litri de apă"
+              required
+            />
+          </div>
+
+          <div>
+            <label htmlFor="date" className="block mb-2 text-lg font-semibold text-purple-800">
+              Data
+            </label>
+            <input
+              type="date"
+              id="date"
+              value={entry.date}
+              onChange={(e) => updateEntry("date", e.target.value)}
+              className="w-full p-5 text-lg border-2 border-purple-400 rounded-xl bg-purple-50 focus:outline-none focus:ring-4 focus:ring-purple-300"
+              required
+            />
+          </div>
+
+          <div className="flex items-center gap-3">
+            <input
+              id="completed"
+              type="checkbox"
+              checked={entry.completed}
+              onChange={(e) => updateEntry("completed", e.target.checked)}
+              className="w-5 h-5 text-purple-600 border-2 border-purple-400 rounded focus:ring-2 focus:ring-purple-500"
+            />
+            <label htmlFor="completed" className="text-lg font-semibold text-purple-800">
+              Marcat ca finalizat
+            </label>
+          </div>
         </div>
 
-        <div>
-          <label
-            htmlFor="date"
-            className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
-          >
-            Data
-          </label>
-          <input
-            type="date"
-            id="date"
-            value={entry.date}
-            onChange={(e) => updateEntry("date", e.target.value)}
-            className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:text-white"
-            required
-          />
-        </div>
-
-        <div className="flex items-center gap-2">
-          <input
-            id="completed"
-            type="checkbox"
-            checked={entry.completed}
-            onChange={(e) => updateEntry("completed", e.target.checked)}
-            className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500"
-          />
-          <label htmlFor="completed" className="text-sm font-medium text-gray-900 dark:text-white">
-            Marcat ca finalizat
-          </label>
-        </div>
-
-        <div className="w-full flex justify-center gap-4">
+        <div className="flex justify-center gap-6 mt-8">
           <button
             type="button"
             onClick={handleCancel}
-            className="text-white bg-red-600 hover:bg-red-700 font-medium rounded-lg text-sm px-5 py-2.5"
+            className="px-8 py-3 bg-red-500 text-white text-lg rounded-xl hover:bg-red-600 transition duration-300 font-bold shadow-lg"
           >
             Renunță
           </button>
           <button
             type="button"
             onClick={() => onSubmit(entry)}
-            className="text-white bg-green-600 hover:bg-green-700 font-medium rounded-lg text-sm px-5 py-2.5"
+            className="px-8 py-3 bg-green-500 text-white text-lg rounded-xl hover:bg-green-600 transition duration-300 font-bold shadow-lg"
           >
             {entry._id ? "Actualizează" : "Adaugă"}
           </button>

@@ -29,7 +29,7 @@ export default function CompletedGoals() {
         body: JSON.stringify({ _id: id, completed: !completed }),
       });
       const data = await res.json();
-      // Actualizează starea locală pentru a elimina obiectivul din listă
+ 
       setGoals(goals.filter((goal) => goal._id !== id));
     } catch (error) {
       console.error("Error updating goal:", error);
@@ -48,14 +48,14 @@ export default function CompletedGoals() {
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-blue-300 via-blue-500 to-blue-800 flex flex-col items-center py-12 relative overflow-hidden">
-      {/* Elemente de fundal pentru cer */}
+      
       <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/white-diamond.png')] opacity-20"></div>
       <div className="absolute top-10 left-10 w-24 h-24 bg-white rounded-full opacity-30 animate-float"></div>
       <div className="absolute top-40 right-20 w-32 h-32 bg-white rounded-full opacity-20 animate-float-slow"></div>
       <div className="absolute bottom-20 left-40 w-16 h-16 bg-white rounded-full opacity-25 animate-float"></div>
 
       <h1 className="text-6xl font-extrabold text-yellow-300 bg-gradient-to-r from-pink-500 via-purple-500 to-blue-500 px-10 py-4 rounded-xl shadow-2xl tracking-wider mb-10 animate-pulse z-10">
-        ✅ Obiective Finalizate ✅
+        Obiective Finalizate 
       </h1>
       <div className="w-full max-w-4xl bg-white bg-opacity-90 p-8 rounded-xl shadow-2xl z-10">
         {completedGoals.length === 0 ? (

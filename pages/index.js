@@ -76,18 +76,7 @@ export default function Home() {
       </h1>
       <div className="w-full max-w-4xl bg-gradient-to-br from-blue-100 to-purple-100 p-6 rounded-2xl shadow-2xl z-10 border-2 border-blue-300 mt-8">
         <div className="mb-8">
-          <input
-            value={title}
-            onChange={(e) => setTitle(e.target.value)}
-            className="w-full p-3 border-2 border-purple-400 rounded-xl focus:outline-none focus:ring-4 focus:ring-purple-300 bg-white text-purple-900 placeholder-purple-400 shadow-md"
-            placeholder="🌈 Scrie un obiectiv nou..."
-          />
-          <button
-            onClick={addGoal}
-            className="mt-4 w-full bg-gradient-to-r from-pink-500 to-purple-600 text-white p-3 rounded-xl hover:from-pink-600 hover:to-purple-700 transition duration-300 text-lg font-semibold tracking-wide shadow-lg border-2 border-pink-300"
-          >
-            ➕ Adaugă Obiectiv
-          </button>
+
         </div>
         {goals.length === 0 ? (
           <p className="text-center text-lg text-purple-700 font-semibold">Nu ai obiective încă. Adaugă unul mai sus! 🌟</p>
