@@ -2,23 +2,30 @@ import Link from "next/link";
 
 const Navbar = () => {
   return (
-    <nav className="bg-blue-700 w-full py-6 shadow-lg sticky top-0 z-50">
-      <div className="container mx-auto flex justify-between items-center px-6">
-        <h1 className="text-white text-3xl font-extrabold tracking-wide">
+    <nav className="bg-purple-800 w-full py-6 shadow-lg sticky top-0 z-50">
+      <div className="max-w-screen-xl mx-auto w-full flex justify-between items-center px-8">
+        <h1 className="text-white text-3xl font-extrabold tracking-wider font-[Poppins]">
           🎯 Daily Goals
         </h1>
-        <div className="flex space-x-10 text-lg font-medium">
+
+        <div className="flex gap-6">
           <Link
             href="/"
-            className="text-white hover:text-yellow-300 transition duration-200 flex items-center gap-2"
+            className="bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-4 rounded-full transition-all shadow-md"
           >
-            🏠 <span>Acasă</span>
+            🏠 Acasă
           </Link>
           <Link
             href="/records/create"
-            className="text-white hover:text-yellow-300 transition duration-200 flex items-center gap-2"
+            className="bg-green-600 hover:bg-green-700 text-white font-medium py-2 px-4 rounded-full transition-all shadow-md"
           >
-            ➕ <span>Adaugă obiectiv</span>
+            ➕ Adaugă obiectiv
+          </Link>
+          <Link
+            href="/records/completed"
+            className="bg-yellow-500 hover:bg-yellow-600 text-white font-medium py-2 px-4 rounded-full transition-all shadow-md"
+          >
+            ✅ Finalizate
           </Link>
         </div>
       </div>
