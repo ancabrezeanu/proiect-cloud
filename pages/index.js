@@ -1,5 +1,5 @@
-// pages/index.js
 import { useState, useEffect } from "react";
+import ChatComponent from "@/components/ChatComponent";
 
 export default function Home() {
   const [goals, setGoals] = useState([]);
@@ -74,12 +74,28 @@ export default function Home() {
       <h1 className="text-yellow-200 bg-gradient-to-r from-pink-600 via-purple-600 to-blue-600 px-12 py-5 rounded-2xl shadow-2xl tracking-wider animate-pulse z-10 border-4 border-yellow-300">
         🌌 Obiectivele Tale 🌌
       </h1>
-      <div className="w-full max-w-4xl bg-gradient-to-br from-blue-100 to-purple-100 p-6 rounded-2xl shadow-2xl z-10 border-2 border-blue-300 mt-8">
-        <div className="mb-8">
 
+      <div className="w-full max-w-4xl bg-gradient-to-br from-blue-100 to-purple-100 p-6 rounded-2xl shadow-2xl z-10 border-2 border-blue-300 mt-8">
+        <div className="mb-8 flex gap-4">
+          <input
+            type="text"
+            value={title}
+            onChange={(e) => setTitle(e.target.value)}
+            placeholder="Adaugă un obiectiv nou..."
+            className="flex-1 p-3 rounded-lg border border-purple-300 shadow-inner text-lg"
+          />
+          <button
+            onClick={addGoal}
+            className="bg-green-500 text-white px-6 py-3 rounded-lg hover:bg-green-600 transition duration-300 text-lg shadow-md border border-green-300"
+          >
+            ➕ Adaugă
+          </button>
         </div>
+
         {goals.length === 0 ? (
-          <p className="text-center text-lg text-purple-700 font-semibold">Nu ai obiective încă. Adaugă unul mai sus! 🌟</p>
+          <p className="text-center text-lg text-purple-700 font-semibold">
+            Nu ai obiective încă. Adaugă unul mai sus! 🌟
+          </p>
         ) : (
           <div className="overflow-x-auto mt-12">
             <table className="w-full table-auto border-collapse border-2 border-purple-300">
@@ -136,6 +152,17 @@ export default function Home() {
             </table>
           </div>
         )}
+      </div>
+
+      {/* 🧠 Asistent AI Chat */}
+      <div className="w-full max-w-4xl bg-white/30 backdrop-blur-xl border border-yellow-200 p-6 mt-16 rounded-2xl shadow-2xl z-10">
+        <h2 className="text-2xl font-bold text-purple-700 mb-4 text-center">
+          🤖 Asistent Obiective (AI)
+        </h2>
+        <p className="text-center text-gray-700 mb-6">
+          Întreabă-l pe AI cum să-ți atingi obiectivele sau cere idei noi! 🌟
+        </p>
+        <ChatComponent />
       </div>
     </div>
   );
