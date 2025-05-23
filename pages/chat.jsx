@@ -1,6 +1,6 @@
 // /pages/chat.jsx
 
-import ChatComponent from "@/js/components/ChatComponent";
+import ChatComponent from "@/components/ChatComponent";
 
 const ChatPage = () => {
     return (
