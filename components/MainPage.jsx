@@ -85,7 +85,7 @@ const MainPage = () => {
 
   return (
     <div className="min-h-screen flex flex-col items-center py-16 px-4 relative overflow-hidden">
-      <h1 className="text-yellow-200 bg-gradient-to-r from-pink-600 via-purple-600 to-blue-600 px-16 py-6 rounded-2xl shadow-2xl tracking-wider animate-pulse z-10 border-4 border-yellow-300 text-4xl font-bold mb-12 leading-relaxed">
+      <h1 className="text-yellow-200 bg-gradient-to-r from-pink-600 via-purple-600 to-blue-600 shadow-2xl tracking-wider animate-pulse text-4xl font-bold mb-12 leading-relaxed">
          Obiectivele Tale 
       </h1>
 
@@ -94,7 +94,7 @@ const MainPage = () => {
           <select
             value={title}
             onChange={(e) => setTitle(e.target.value)}
-            className="w-full sm:w-[50%] h-14 text-lg px-5 py-3 rounded-xl border-2 border-purple-500 shadow-lg bg-white focus:outline-purple-600 tracking-wide leading-relaxed"
+            className="w-50 sm:w-[50%] h-50 text-lg px-5 py-3 rounded-xl border-2 border-purple-500 shadow-lg bg-white focus:outline-purple-600 tracking-wide leading-relaxed"
           >
             <option value="">— Alege un obiectiv —</option>
             <option value="Bea 2 litri de apă">Bea 2 litri de apă</option>
@@ -112,13 +112,13 @@ const MainPage = () => {
               value={customTitle}
               onChange={(e) => setCustomTitle(e.target.value)}
               placeholder="Scrie obiectivul tău"
-              className="w-full sm:w-[50%] h-14 text-lg px-5 py-3 rounded-xl border-2 border-pink-400 shadow-inner bg-white tracking-wide leading-relaxed"
+              className="w-30 sm:w-[50%] h-40 text-lg px-5 py-3 rounded-xl border-2 border-pink-400 shadow-inner bg-white tracking-wide leading-relaxed"
             />
           )}
 
           <button
             onClick={addGoal}
-            className="w-full sm:w-auto h-14 px-10 py-4 bg-green-500 text-white text-lg font-semibold rounded-xl hover:bg-green-600 transition duration-300 shadow-xl border-2 border-green-700"
+            className="w-20 sm:w-auto h-25 px-10 py-4 bg-green-500 text-white text-lg font-semibold rounded-xl hover:bg-green-600 transition duration-300 shadow-xl border-2 border-green-700"
           >
             Adaugă
           </button>
@@ -196,15 +196,17 @@ const MainPage = () => {
         )}
       </div>
 
-      <div className="w-full max-w-5xl bg-white/30 backdrop-blur-xl border border-yellow-200 p-8 mt-20 rounded-2xl shadow-2xl z-10">
+      
+      <div className="relative w-30 max-w-5xl bg-white/30 backdrop-blur-xl border border-yellow-200 p-8 mt-20 rounded-2xl shadow-2xl z-10">
         <h2 className="text-3xl font-bold text-purple-700 mb-6 text-center leading-relaxed tracking-wide">
-          🤖 Asistent Obiective (AI)
+           Asistent(AI)
         </h2>
         <p className="text-center text-lg text-gray-700 mb-8 leading-relaxed tracking-wide">
-          Întreabă-l pe AI cum să-ți atingi obiectivele sau cere idei noi! 🌟
+          Întreabă-l pe AI cum să-ți atingi obiectivele sau cere idei noi! 
         </p>
         <ChatComponent />
       </div>
+
     </div>
   );
 };

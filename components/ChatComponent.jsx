@@ -45,7 +45,7 @@ export default function ChatComponent() {
           return updated;
         });
       } else {
-        console.log("Răspuns invalid sau lipsă message:", data);
+        console.log("Răspuns invalid sau lipsă mesaj:", data);
       }
     } catch (error) {
       console.error("Eroare la trimitere mesaj:", error);
@@ -58,19 +58,20 @@ export default function ChatComponent() {
     <div className="w-full max-w-3xl mx-auto p-6">
       <MessageBox chatMessages={chatMessages} />
 
-      <div className="mt-6 flex flex-col sm:flex-row justify-center items-center gap-4">
+      <div className="mt-6 w-full max-w-md mx-auto flex flex-col gap-4">
+
         <textarea
           value={userInput}
           onChange={(e) => setUserInput(e.target.value)}
           onKeyDown={(e) => e.key === "Enter" && !e.shiftKey && (e.preventDefault(), sendMessage())}
           placeholder="Scrie o întrebare despre obiective..."
           rows="3"
-          className="w-full max-w-xs mx-auto h-24 text-xl font-bold px-5 py-4 rounded-xl border-2 border-purple-500 shadow-md focus:outline-none focus:border-purple-600 bg-white tracking-wide leading-relaxed resize-none"
-        />
+          className="w-full h-24 text-xl font-bold px-5 py-4 rounded-xl shadow-md focus:outline-none bg-white tracking-wide leading-relaxed resize-none border-none"
+          />
         <button
           onClick={sendMessage}
           disabled={loading}
-          className="w-full sm:w-auto sm:min-w-[120px] mx-auto bg-purple-600 hover:bg-purple-700 text-white font-bold py-4 px-6 rounded-xl transition duration-300 shadow-md"
+          className="w-40 sm:w-auto sm:min-w-[120px] mx-auto bg-purple-600 hover:bg-purple-700 text-white font-bold py-4 px-6 rounded-xl transition duration-300 shadow-md"
         >
           {loading ? "..." : "Trimite"}
         </button>
