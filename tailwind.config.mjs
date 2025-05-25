@@ -1,12 +1,12 @@
-// tailwind.config.js
-module.exports = {
+// tailwind.config.mjs
+export default {
   content: ["./pages/**/*.{js,ts,jsx,tsx}", "./components/**/*.{js,ts,jsx,tsx}"],
   theme: {
     extend: {
       animation: {
-        "float": "float 6s ease-in-out infinite",
+        float: "float 6s ease-in-out infinite",
         "float-slow": "float 8s ease-in-out infinite",
-        "twinkle": "twinkle 3s ease-in-out infinite",
+        twinkle: "twinkle 3s ease-in-out infinite",
         "twinkle-slow": "twinkle 5s ease-in-out infinite",
       },
       keyframes: {

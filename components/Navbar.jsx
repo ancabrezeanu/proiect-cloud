@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { SignedIn, SignedOut, SignInButton, UserButton } from "@clerk/nextjs";
 
 const Navbar = () => {
   return (
@@ -8,7 +9,7 @@ const Navbar = () => {
           Daily Goals
         </h1>
 
-        <div className="flex flex-wrap justify-center gap-10">
+        <div className="flex flex-wrap justify-center gap-6 sm:gap-10 items-center">
           <Link
             href="/"
             className="bg-blue-600 hover:bg-blue-700 hover:scale-105 text-white font-medium py-3 px-8 rounded-full transition-all duration-300 shadow-md text-lg tracking-wider min-w-[140px] text-center"
@@ -27,6 +28,18 @@ const Navbar = () => {
           >
             Finalizate
           </Link>
+
+          <SignedOut>
+            <SignInButton mode="modal">
+              <button className="bg-white text-purple-800 font-semibold py-3 px-6 rounded-full hover:bg-gray-200 transition-all duration-300 shadow-md">
+                Autentificare
+              </button>
+            </SignInButton>
+          </SignedOut>
+
+          <SignedIn>
+            <UserButton afterSignOutUrl="/" />
+          </SignedIn>
         </div>
       </div>
     </nav>
